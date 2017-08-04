@@ -1,0 +1,3 @@
+rootProject.name = 'MaoYanRnXc'
+
+include ':app'
