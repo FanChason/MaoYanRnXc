@@ -10,18 +10,18 @@ let count = 0;
 class HomeCell extends PureComponent {
 
     render() {
-        let { info } = this.props
-        let imageUrl = info.imageUrl.replace('w.h', '160.0')
+        let { info } = this.props;
         return (
             <TouchableOpacity style={styles.container} onPress={() => this.props.onPress(info)}>
-                <Image source={require('../../img/zhanlang.png')} style={styles.icon} />
+                <Image source={{ uri: info.img }} style={styles.icon} />
+                {/*<Image source={require('../../img/zhanlang.png')} style={styles.icon} />*/}
 
                 <View style={styles.rightContainer}>
-                    <Heading1>{info.title}</Heading1>
+                    <Heading1>{info.nm}</Heading1>
 
-                    <Tip style={styles.subtitle}>{info.subtitle}</Tip>
-                    <Tip style={styles.subtitle}>{info.subtitle}</Tip>
-                    <Tip style={styles.subtitle}>{info.subtitle}</Tip>
+                    <Tip style={styles.subtitle}>{ '观众评  '} <Text style={styles.score}>{info.sc}</Text></Tip>
+                    <Tip style={styles.subtitle}>{ '主演：' + info.star}</Tip>
+                    <Tip style={styles.subtitle}>{info.showInfo}</Tip>
                 </View>
 
             </TouchableOpacity>
@@ -46,6 +46,9 @@ const styles = StyleSheet.create({
     },
     subtitle:{
         marginTop: 6,
+    },
+    score:{
+        color: '#FFD306',
     },
     rightContainer: {
         flex: 1,
