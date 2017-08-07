@@ -1,10 +1,52 @@
-import React, { PureComponent } from 'react'
-import { Text } from 'react-native'
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ListView,
+  Image
+} from 'react-native';
 
-class HomeScene extends PureComponent {
+import HomeCell from './HomeCell'
+
+export default class HomeScene extends Component {
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-0",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-2",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"},
+        {imageUrl:'../../img/zhanlang.png',title:"战狼2-1",subtitle:"1111111111", price:"39"}
+        ])
+    };
+  }
+
   render() {
-      return <Text>Home</Text>
-    }
-}
+    return (
+      /*<View style={styles.container}>*/
+        <View>
 
-export default HomeScene;
+        <ListView
+          showsVerticalScrollIndicator={false}
+          dataSource={this.state.dataSource}
+          // renderRow={(rowData,rowId) => <CellView source={{uri:rowData.logo}} rowD={rowData.name} />}
+          renderRow={(rowData) =>
+              <HomeCell
+                  info={rowData}
+              />
+          }
+        />
+
+
+      </View>
+    );
+  }
+}

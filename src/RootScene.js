@@ -76,6 +76,7 @@ const Tab = TabNavigator(
                 )
             }),
         },
+
         Movie: {
             screen: MovieScene,
             navigationOptions: ({ navigation }) => ({
