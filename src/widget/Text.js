@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         color: '#222222',
+        flexDirection:'row',
     },
     h2: {
         fontSize: 14,
@@ -42,6 +43,8 @@ const styles = StyleSheet.create({
     },
     tip: {
         fontSize: 13,
-        color: '#999999'
+        color: '#999999',
+        flexWrap: 'nowrap',
+
     }
 });
