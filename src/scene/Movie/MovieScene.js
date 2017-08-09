@@ -22,7 +22,7 @@ class MovieScene extends PureComponent {
     }
 
     static navigationOptions = ({ navigation }) => ({
-        title: '电影',
+        title: '订单',
         headerStyle: { backgroundColor: 'white' },
     })
 
@@ -46,8 +46,6 @@ class MovieScene extends PureComponent {
 
             let response = await fetch(api.recommend)
             let json = await response.json()
-
-            // console.log('请求返回数据：' + JSON.stringify(json));
 
             let dataList = json.data.map((info) => {
                 return {

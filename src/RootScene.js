@@ -15,7 +15,8 @@ import ShowScene from './scene/Show/ShowScene'
 import MineScene from './scene/Mine/MineScene'
 
 import WebScene from './widget/WebScene'
-// import GroupPurchaseScene from './scene/GroupPurchase/GroupPurchaseScene'
+import GroupPurchaseScene from './scene/GroupPurchase/GroupPurchaseScene'
+import MovieDetailScene from './scene/MovieDetail/MovieDetailScene'
 
 const lightContentScenes = ['Home', 'Mine']
 
@@ -156,7 +157,8 @@ const Navigator = StackNavigator(
     {
         Tab: { screen: Tab },
         Web: { screen: WebScene },
-        // GroupPurchase: { screen: GroupPurchaseScene },
+        GroupPurchase: { screen: GroupPurchaseScene },
+        MovieDetail: { screen: MovieDetailScene },
     },
     {
         navigationOptions: {
