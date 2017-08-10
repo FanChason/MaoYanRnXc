@@ -137,7 +137,7 @@ export default class HomeScene extends Component {
 
     getDataFromFetch() {
 
-        fetch(moviesListWithParameter('hot', 0, 1000))//请求地址
+        fetch(moviesListWithParameter('hot', 0, 20))//请求地址
             .then((response) => response.json())//取数据
             .then((responseText) => {//处理数据
                 //通过setState()方法重新渲染界面
