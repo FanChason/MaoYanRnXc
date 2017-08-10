@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b98b764-cedd-4ce4-bf31-e16432bb2ffe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scene/Home/HomeScene.js" afterPath="$PROJECT_DIR$/src/scene/Home/HomeScene.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scene/MovieDetail/MovieDetailScene.js" afterPath="$PROJECT_DIR$/src/scene/MovieDetail/MovieDetailScene.js" />
     </list>
     <ignored path="MaoYanRnXc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +43,8 @@
       <file leaf-file-name="MovieDetailScene.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scene/MovieDetail/MovieDetailScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+            <state relative-caret-position="323">
+              <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
               <folding>
                 <element signature="e#20#64#0" expanded="true" />
               </folding>
@@ -149,8 +143,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="516" />
-    <option name="y" value="24" />
+    <option name="x" value="130" />
+    <option name="y" value="359" />
     <option name="width" value="1353" />
     <option name="height" value="809" />
   </component>
@@ -316,15 +310,15 @@
       <workItem from="1502127325571" duration="4515000" />
       <workItem from="1502199986364" duration="357000" />
       <workItem from="1502200385457" duration="22176000" />
-      <workItem from="1502379096891" duration="3446000" />
+      <workItem from="1502379096891" duration="3575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33893000" />
+    <option name="totallyTimeSpent" value="34022000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="516" y="24" width="1353" height="809" extended-state="0" />
+    <frame x="130" y="359" width="1353" height="809" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24308152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -767,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scene/MovieDetail/MovieDetailScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        <state relative-caret-position="323">
+          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
             <element signature="e#20#64#0" expanded="true" />
           </folding>
