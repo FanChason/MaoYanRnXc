@@ -19,7 +19,7 @@ import {
 // } from 'react-native';
 
 import HomeCell from './HomeCell'
-
+import api, { moviesListWithParameter } from '../../api'
 
 Dimensions = require('Dimensions');
 width = Dimensions.get('window').width;
@@ -106,6 +106,7 @@ export default class HomeScene extends Component {
                 renderRow={(rowData) =>
                     <HomeCell
                         info={rowData}
+                        onPress={() => this.props.navigation.navigate('MovieDetail', { info: rowData })}
                     />
                 }
             />
@@ -136,7 +137,7 @@ export default class HomeScene extends Component {
 
     getDataFromFetch() {
 
-        fetch('http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=20')//请求地址
+        fetch(moviesListWithParameter('hot', 0, 1000))//请求地址
             .then((response) => response.json())//取数据
             .then((responseText) => {//处理数据
                 //通过setState()方法重新渲染界面
