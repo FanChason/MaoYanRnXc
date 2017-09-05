@@ -83,7 +83,7 @@ class MovieScene extends PureComponent {
                             info={rowData}
                             onPress={() => {
                                 StatusBar.setBarStyle('default', false)
-                                this.props.navigation.navigate('GroupPurchase', { info: rowData })
+                                this.props.navigation.navigate('MovieDetail', { info: rowData })
                             }}
                         />
                     }

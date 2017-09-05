@@ -70,7 +70,9 @@ class GroupPurchaseScene extends PureComponent {
                             onPress={() => this.props.navigation.navigate('GroupPurchase', { info: rowData })}
                         />
                     }
+
                     onHeaderRefresh={() => this.requestData()}
+
                 />
             </View>
         )
@@ -82,6 +84,7 @@ class GroupPurchaseScene extends PureComponent {
         return (
             <View>
                 <View>
+                    /*
                     <Image style={styles.banner} source={{ uri: info.imageUrl.replace('w.h', '480.0') }} />
 
                     <View style={styles.topContainer}>
@@ -95,6 +98,8 @@ class GroupPurchaseScene extends PureComponent {
                             containerStyle={styles.buyButton}
                         />
                     </View>
+                    */
+                    <text>header header</text>
                 </View>
 
                 <Separator />

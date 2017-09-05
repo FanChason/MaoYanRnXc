@@ -12,6 +12,10 @@ import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell'
 // create a component
 class MovieDetailScene extends PureComponent {
 
+    render() {
+        return <Text>dfsdfgsdf</Text>
+    }
+
     listView: ListView
 
     state: {
@@ -19,15 +23,26 @@ class MovieDetailScene extends PureComponent {
         dataSource: ListView.DataSource
     }
 
+    static navigationOptions = ({ navigation }) => ({
+        title: '电影详情',
+        headerStyle: { backgroundColor: 'gray' },
+    })
+
     constructor(props: Object) {
-        super(props);
+          super(props);
 
-        let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
+          let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
 
-        this.state = {
-            info: {},
-            dataSource: ds.cloneWithRows([]),
-        }
+          this.state = {
+              info: {},
+              dataSource: ds.cloneWithRows([]),
+          }
+      }
+    componentDidMount() {
+        this.requestData();
+        // InteractionManager.runAfterInteractions(() => {
+        //     this.listView.startHeaderRefreshing();
+        // });
     }
 
 
@@ -40,11 +55,22 @@ class MovieDetailScene extends PureComponent {
                     ref={(e) => this.listView = e}
                     dataSource={this.state.dataSource}
                     renderHeader={() => this.renderHeader()}
+                    // renderRow={(rowData) =>
+                    //     <GroupPurchaseCell
+                    //         info={rowData}
+                    //         onPress={() => this.props.navigation.navigate('GroupPurchase', { info: rowData })}
+                    //     />
+                    // }
+                    onHeaderRefresh={() => this.requestData()}
                 />
             </View>
 
 
+
         )
+    }
+    requestData() {
+        this.requestMovieDetail()
     }
 
     async requestMovieDetail() {
@@ -53,15 +79,12 @@ class MovieDetailScene extends PureComponent {
             let response = await fetch(movieDetailWithId(info.id))
             let json = await response.json()
 
-            console.log(JSON.stringify(json));
+            //alert(JSON.stringify(json));
 
             let dataList = json.data.deals.map((info) => {
                 return {
                     id: info.id,
-                    imageUrl: info.imgurl,
-                    title: info.brandname,
-                    subtitle: `[${info.range}]${info.title}`,
-                    price: info.price
+                    imageUrl: info.img
                 }
             })
 
@@ -80,24 +103,18 @@ class MovieDetailScene extends PureComponent {
         let info = this.props.navigation.state.params.info
 
         return (
-            <View>
+            <View style={styles.header}>
                 <View>
-                    <Image style={styles.banner} source={{ uri: info.imageUrl.replace('w.h', '480.0') }} />
+                    <Image style={styles.banner} source={{ uri: info.imageUrl}} />
 
                     <View style={styles.topContainer}>
                         <Heading1>￥</Heading1>
                         <HeadingBig style={{ marginBottom: -8 }}>{info.price}</HeadingBig>
                         <Paragraph style={{ marginLeft: 10 }}>门市价：￥{(info.price * 1.1).toFixed(0)}</Paragraph>
-                        <View style={{ flex: 1 }} />
-                        <Button
-                            title='立即抢购'
-                            style={{ color: 'white', fontSize: 18 }}
-                            containerStyle={styles.buyButton}
-                        />
                     </View>
                 </View>
 
-                <Separator />
+                {/*<Separator />*/}
 
                 <View>
                     <View style={styles.tagContainer}>
@@ -109,7 +126,7 @@ class MovieDetailScene extends PureComponent {
 
                 </View>
 
-                <SpacingView />
+                {/*<SpacingView />*/}
 
                 <View style={styles.tipHeader}>
                     <Heading2>看了本团购的用户还看了</Heading2>
@@ -118,11 +135,13 @@ class MovieDetailScene extends PureComponent {
         )
     }
 
-
 }
 
 
 const styles = StyleSheet.create({
+    header:{
+        backgroundColor: 'gray',
+    },
     container: {
         flex: 1,
         backgroundColor: 'white',
@@ -153,7 +172,6 @@ const styles = StyleSheet.create({
         borderWidth: screen.onePixel,
         paddingVertical: 8,
         paddingLeft: 20,
-        backgroundColor: 'white'
     }
 });
 //make this component available to the app
