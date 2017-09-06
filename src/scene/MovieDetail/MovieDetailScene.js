@@ -4,7 +4,7 @@
 import React, { PureComponent } from 'react'
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ListView, Image, InteractionManager } from 'react-native'
 import { color, Button, NavigationItem, RefreshListView, RefreshState, Separator, SpacingView } from '../../widget'
-import { Heading1, Heading2, Paragraph, HeadingBig } from '../../widget/Text'
+import { Heading1, Heading2,Heading3, Paragraph, HeadingBig, Paragraph2 } from '../../widget/Text'
 import { screen, system, tool } from '../../common'
 import api, { movieDetailWithId } from '../../api'
 import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell'
@@ -104,32 +104,23 @@ class MovieDetailScene extends PureComponent {
 
         return (
             <View style={styles.header}>
-                <View>
-                    <Image style={styles.banner} source={{ uri: info.imageUrl}} />
-
+                <View style={styles.headerLeft}>
                     <View style={styles.topContainer}>
-                        <Heading1>￥</Heading1>
-                        <HeadingBig style={{ marginBottom: -8 }}>{info.price}</HeadingBig>
-                        <Paragraph style={{ marginLeft: 10 }}>门市价：￥{(info.price * 1.1).toFixed(0)}</Paragraph>
+                        <Heading3>{info.nm}</Heading3>
+                        <Paragraph2>{info.dir}</Paragraph2>
+                        <Paragraph2 style={styles.movieType}>{info.ver}</Paragraph2>
+                        <Paragraph2>{info.cat}</Paragraph2>
+                        <Paragraph2>{info.src}/{info.dur}分钟</Paragraph2>
+                        <Paragraph2>{info.rt}></Paragraph2>
+                        <SpacingView />
+                        <Paragraph2>观众评  <Paragraph2 style={styles.score}>{info.sc}</Paragraph2> </Paragraph2>
+                        <Separator style={styles.scoreLine}/><Separator style={styles.percentage} />
+                        <Paragraph2>{info.snum /10000} 万人></Paragraph2>
                     </View>
                 </View>
-
-                {/*<Separator />*/}
-
-                <View>
-                    <View style={styles.tagContainer}>
-                        <Image style={{ width: 20, height: 20 }} source={require('../../img/Home/icon_deal_anytime_refund.png')} />
-                        <Paragraph style={{ color: '#89B24F' }}>  随时退</Paragraph>
-                        <View style={{ flex: 1 }} />
-                        <Paragraph>已售{1234}</Paragraph>
-                    </View>
-
-                </View>
-
-                {/*<SpacingView />*/}
-
-                <View style={styles.tipHeader}>
-                    <Heading2>看了本团购的用户还看了</Heading2>
+                <View style={styles.headerRight}>
+                    <View style={styles.rightTop}></View>
+                    <Image style={styles.banner} source={{ uri: info.img}} />
                 </View>
             </View>
         )
@@ -139,21 +130,51 @@ class MovieDetailScene extends PureComponent {
 
 
 const styles = StyleSheet.create({
+    movieType:{
+        backgroundColor:'gray',
+        fontSize:10,
+        marginTop:5,
+        marginBottom:5,
+    },
+    score:{
+        color: '#FFD306',
+    },
+    scoreLine:{
+        backgroundColor: 'white',
+        width: 60,
+    },
+    percentage:{
+        backgroundColor: '#FFD306',
+        width: 48,
+    },
     header:{
-        backgroundColor: 'gray',
+        backgroundColor: '#6e6e6e',
+        flexDirection: 'row',
+    },
+    headerLeft:{
+        flex: 2.8,
+    },
+    headerRight:{
+        flex: 1,
+        flexDirection:'column',
     },
     container: {
-        flex: 1,
         backgroundColor: 'white',
     },
+    rightTop:{
+        flex: 1,
+    },
     banner: {
-        width: screen.width,
-        height: screen.width * 0.5
+        flex: 1,
+        backgroundColor: 'red',
+        width: 80,
+        height: 60,
     },
     topContainer: {
         padding: 10,
-        flexDirection: 'row',
-        alignItems: 'flex-end',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        flex:1,
     },
     buyButton: {
         backgroundColor: '#fc9e28',
